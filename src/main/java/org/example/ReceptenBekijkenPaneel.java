@@ -135,11 +135,10 @@ public class ReceptenBekijkenPaneel {
 
     public Recept haalAlleReceptGegevens() throws SQLException {
         int currentReceptId = 0;
-        currentReceptId = dropbox.getSelectedIndex();
+        currentReceptId = dropbox.getSelectedIndex() + 1;
         Connection connection = connectToDatabase();
         Recept recept = null;
 
-        // Hier halen we de recept gegevens op
         String sqlQuery = """
                  SELECT recept_naam,
                        recept_beschrijving,
